@@ -130,12 +130,12 @@ public final class DSPManager extends Activity
             theme.applyStyle(android.R.style.Theme_Material, true);
         else if(themeApp == 1)
             theme.applyStyle(android.R.style.Theme_Material_Light, true);
-        else if(themeApp == 2)
-            theme.applyStyle(R.style.AppTheme, true);
-        else if(themeApp == 3)
-            theme.applyStyle(R.style.AppThemeRed, true);
-        else if(themeApp == 4)
-            theme.applyStyle(R.style.AppThemeIdea, true);
+//        else if(themeApp == 2)
+//            theme.applyStyle(R.style.AppTheme, true);
+//        else if(themeApp == 3)
+//            theme.applyStyle(R.style.AppThemeRed, true);
+//        else if(themeApp == 4)
+//            theme.applyStyle(R.style.AppThemeIdea, true);
         return theme;
     }
 	private final BroadcastReceiver updateReceiver = new BroadcastReceiver()
@@ -195,8 +195,8 @@ public final class DSPManager extends Activity
         checkPermission(this, Manifest.permission.RECEIVE_BOOT_COMPLETED, "Permission check", "If have to reopen JamesDSP app everytime you reboot if you refuse");
         checkPermission(this, Manifest.permission.BLUETOOTH, "Permission check", "We need to get information for bluetooth");
         checkPermission(this, Manifest.permission.BLUETOOTH_ADMIN, "Permission check", "We need to get information for bluetooth");
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P)
-	        checkPermission(this, Manifest.permission.FOREGROUND_SERVICE, "Permission check", "We need background service to keep global registraton mode running");
+//		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P)
+//	        checkPermission(this, Manifest.permission.FOREGROUND_SERVICE, "Permission check", "We need background service to keep global registraton mode running");
         preferencesMode = getSharedPreferences(DSPManager.SHARED_PREFERENCES_BASENAME + "." + "settings", 0);
         SharedPreferences preferences = getSharedPreferences(DSPManager.SHARED_PREFERENCES_BASENAME + "." + HeadsetService.getAudioOutputRouting(), 0);
         File impFile = new File(preferences.getString("dsp.convolver.files", ""));
